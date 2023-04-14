@@ -64,4 +64,3 @@ yarn start
 Pour lancer l'app en local
 
 Vous pouvez ensuite changer l'état de l'app en utilisant les touches `flèche-bas` et `flèche-haut`
-
