@@ -1,6 +1,6 @@
 # ☕ YCoffee
 
-Node.js / typescript / WebSocket server for Y-coffee
+React.js / typescript / Web server for Y-coffee
 
 L'objectif de **_YCoffe_** est d'informer les étudiants du campus d'Ynov sur le statut de la machine à café via une application web et mobile, informant si la machine à café est opérationnelle ou non.
 
@@ -49,7 +49,7 @@ Ce projet a été réalisé lors du challenge 48h
 
 Vous aurez besoin de Node.js ( v16 ou plus récent ), de yarn
 
-et bien évidemment, le [Serveur websocket](https://github.com/Challenge-48h-Ynov-coffeeUP/node-server)
+Ce serveur est concu pour fonctionner avec [l'appli web](https://github.com/Challenge-48h-Ynov-coffeeUP/web-app) et [l'app mobile](https://github.com/Challenge-48h-Ynov-coffeeUP/mobile-app)
 
 Dans le répertoire du projet, vous pouvez lancer les commandes suivantes :
 
