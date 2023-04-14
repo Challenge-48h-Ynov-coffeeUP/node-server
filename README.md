@@ -62,12 +62,6 @@ puis
 yarn start
 ``` 
 Pour lancer l'app en local
-Vous pourrez ensuite voir l'application [ici](http://localhost:3000)
 
-If the websocket server is hosted on a different port/ip, you can change it in the .env file
-Si le serveur WebSocket est exposé sur un port ou une ip différente, vous pouvez configurer cela dans le fichier `.env` a la racine du projet 
+Vous pouvez ensuite changer l'état de l'app en utilisant les touches `flèche-bas` et `flèche-haut`
 
-exemple:
-```md
-REACT_APP_backend=ws://192.168.1.6:8999
-```
