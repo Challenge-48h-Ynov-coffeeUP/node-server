@@ -3,33 +3,42 @@ import * as http from "http";
 import * as WebSocket from "ws";
 
 const app = express();
-
-//initialize a simple http server
 const server = http.createServer(app);
-
-//initialize the WebSocket server instance
 const webSocketServer = new WebSocket.Server({ server });
 
 let coffeeStatus: boolean = false;
 
 webSocketServer.on("connection", (ws: WebSocket) => {
-  //connection is up, let's add a simple simple event
   ws.on("message", (message: string) => {
-    //log the received message and send it back to the client
-    console.log("received: %s", message);
-    ws.send(`Hello, you sent -> ${message}`);
+    console.log(`received: ${message}`);
+    if (message == "up") {
+      coffeeStatus = true;
+      console.log("coffee status: " + coffeeStatus);
+      webSocketServer.clients.forEach((client) => {
+        if (client.readyState === WebSocket.OPEN) {
+          client.send(JSON.stringify({ coffeeStatus: coffeeStatus }));
+        }
+      });
+    }
+    if (message == "down") {
+      coffeeStatus = false;
+      console.log("coffee status: " + coffeeStatus);
+      webSocketServer.clients.forEach((client) => {
+        if (client.readyState === WebSocket.OPEN) {
+          client.send(JSON.stringify({ coffeeStatus: coffeeStatus }));
+        }
+      });
+    }
+    ws.send(`${message}`);
   });
 
   const readline = require("readline");
-
   readline.emitKeypressEvents(process.stdin);
   if (process.stdin.isTTY) {
     process.stdin.setRawMode(true);
   }
-
   process.stdin.on("keypress", (str, key) => {
     if (key.ctrl && key.name === "c") {
-      // exit
       process.exit(0);
     }
     if (key.name === "up") {
