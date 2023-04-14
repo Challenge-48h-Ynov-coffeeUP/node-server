@@ -1,6 +1,7 @@
 # ☕ YCoffee
 
 React.js / typescript / Web server for Y-coffee
+feel free to dm MHD#0845 on discord if you have any questions / issues
 
 L'objectif de **_YCoffe_** est d'informer les étudiants du campus d'Ynov sur le statut de la machine à café via une application web et mobile, informant si la machine à café est opérationnelle ou non.
 
